@@ -147,14 +147,16 @@ public class SYV {
     String [] enemi1 = {trump.nombre, epstein.nombre, netan.nombre};
     int [] enemi2 = {trump.fuerza, epstein.fuerza, netan.fuerza};
     int [] enemi3 = {trump.resistencia , epstein.resistencia , netan.resistencia };
-    int [] enemi4 = {trump.vida_hp, epstein.vida_hp, netan.vida_hp};
+    double [] enemi4 = {trump.vida_hp, epstein.vida_hp, netan.vida_hp};
     String [] enemi5 = {trump.imagen, epstein.imagen, netan.imagen};
 
     String [] equi1 = {steve.nombre, leon.nombre, link.nombre};
     int [] equi2 = {steve.fuerza, leon.fuerza, link.fuerza};
     int [] equi3 = {steve.resistencia, leon.resistencia, link.resistencia};
-    int [] equi4 = {steve.vida_hp, leon.vida_hp, link.vida_hp};
+    double [] equi4 = {steve.vida_hp, leon.vida_hp, link.vida_hp};
 
+    final int[] SALUD_INICIAL = {100, 125, 135};
+    // pues eso era lo que tenia yo pero con otro valor 
     int Enemigos =3;
     int Equipo = 3;
 
@@ -199,20 +201,32 @@ public class SYV {
         switch (accion) {
             case 1:
                System.out.println("escojistes atacar");
+                
+                daño_recibido= equi2[t] - ((equi2[t])*enemi2[e]/100);
+                enemi4[e]=enemi4[e]-daño_recibido;
+
                 break;
-                daño_recibido=
             case 2:
                 System.out.println("escojistes fortalecer");
+
+                equi3[t] = equi3[t] + 10;
+
                 break;
             case 3:
                 System.out.println("escojistes curar");
+
+                equi4[t]=SALUD_INICIAL[t];
+
                 break;
             case 4:
                 System.out.println("escojistes aumentar ataque");
+
+                equi2[t] = equi2[t] + 20;
                 break;
             case 5:
                 System.out.println("escojistes mostrar estadisticas");
                 System.out.println("TU EQUIPO");
+                System.out.println("");
                 System.out.println("Nombre: "+equi1[t]);
                 System.out.println("Fuerza: "+equi2[t]);
                 System.out.println("Resistencia: "+equi3[t]);
@@ -220,6 +234,7 @@ public class SYV {
                 System.out.println("");
                 System.out.println("");
                 System.out.println("PEDOFILOS");
+                System.out.println("");
                 System.out.println("Nombre: "+enemi1[e]);
                 System.out.println("Fuerza: "+enemi2[e]);
                 System.out.println("Resistencia: "+enemi3[t]);
