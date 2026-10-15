@@ -145,46 +145,93 @@ public class SYV {
     SuperHero leon = new SuperHero("Leon Scott Kennedy", 40, 17, 125,"");
     SuperHero link = new SuperHero("Link el Heroe del Tiempo", 42, 30, 135,"");
     String [] enemi1 = {trump.nombre, epstein.nombre, netan.nombre};
-    String [] enemi2 = {trump.imagen, epstein.imagen, netan.imagen};
-    String [] equi = {steve.nombre, leon.nombre, link.nombre};
+    int [] enemi2 = {trump.fuerza, epstein.fuerza, netan.fuerza};
+    int [] enemi3 = {trump.resistencia , epstein.resistencia , netan.resistencia };
+    int [] enemi4 = {trump.vida_hp, epstein.vida_hp, netan.vida_hp};
+    String [] enemi5 = {trump.imagen, epstein.imagen, netan.imagen};
+
+    String [] equi1 = {steve.nombre, leon.nombre, link.nombre};
+    int [] equi2 = {steve.fuerza, leon.fuerza, link.fuerza};
+    int [] equi3 = {steve.resistencia, leon.resistencia, link.resistencia};
+    int [] equi4 = {steve.vida_hp, leon.vida_hp, link.vida_hp};
 
     int Enemigos =3;
     int Equipo = 3;
 
     System.out.println("SALVA A LOS NIÑOS");
     System.out.println("");
-    System.out.println("");
     System.out.println("Presiona ENTER para comezar");
-    vacio= teclado.next();
-    
+    vacio = teclado.nextLine();
+
     System.out.println("El objetivo de tu equipo es rescatar a los niños de una isla en el caribe");
     System.out.println("");
     System.out.println("Para salvar los niños necesitamos derrotar a quienes lo custodian");
 
+    Thread.sleep(4500);
 
 
 
 
 
     while (Enemigos != 0) {
-        int q=0;
+        double daño_recibido;
+        int e=0;
+        int t=0;
+        System.out.println("Ahora te enfrentas a "+enemi1[e]);
+        System.out.println("");
+        Thread.sleep(1500);
+        System.out.println(enemi5[e]);
+        System.out.println("");
+        System.out.println("");
 
-        System.out.println("Ahora te enfrentas a "+enemi1[q]);
-        System.out.println("");
-        Thread.sleep(3000);
-        System.out.println(enemi2[q]);
-        System.out.println("");
-        System.out.println("escoja la habilidad");
-        int habilidad = teclado.nextInt();
+        System.out.println("Controlas a "+equi1[t]);
+
         
-        switch (habilidad) {
+        System.out.println("escoja la habilidad");
+
+        System.out.println("1. ATACAR");
+        System.out.println("2. FORTALECER");
+        System.out.println("3. CURAR");
+        System.out.println("4. AUMENTAR ATAQUE");
+        System.out.println("5. MOSTRAR ESTADISTICAS");
+        int accion = teclado.nextInt();
+        
+        switch (accion) {
             case 1:
+               System.out.println("escojistes atacar");
+                break;
+                daño_recibido=
+            case 2:
+                System.out.println("escojistes fortalecer");
+                break;
+            case 3:
+                System.out.println("escojistes curar");
+                break;
+            case 4:
+                System.out.println("escojistes aumentar ataque");
+                break;
+            case 5:
+                System.out.println("escojistes mostrar estadisticas");
+                System.out.println("TU EQUIPO");
+                System.out.println("Nombre: "+equi1[t]);
+                System.out.println("Fuerza: "+equi2[t]);
+                System.out.println("Resistencia: "+equi3[t]);
+                System.out.println("Salud: "+equi4[t]);
+                System.out.println("");
+                System.out.println("");
+                System.out.println("PEDOFILOS");
+                System.out.println("Nombre: "+enemi1[e]);
+                System.out.println("Fuerza: "+enemi2[e]);
+                System.out.println("Resistencia: "+enemi3[t]);
+                System.out.println("Salud: "+enemi4[e]);
+
+                Thread.sleep(6000);
 
                 break;
-            
-                default:
+            default:
+                System.out.println("valor no valido");
                 break;
-            }
+        }
 
 
 
